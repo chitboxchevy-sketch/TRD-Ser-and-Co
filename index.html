@@ -11,6 +11,10 @@
             font-family: 'Jost', sans-serif;
             background-color: #f3f4f6;
         }
+        /* Custom class for the chevron rotation */
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen text-gray-800 p-4">
@@ -27,10 +31,10 @@
                 <span class="inline-block px-3 py-1 bg-gray-200 rounded-full text-sm font-semibold m-1">Property Clean-Up</span>
                 <span class="inline-block px-3 py-1 bg-gray-200 rounded-full text-sm font-semibold m-1">Lawn Service</span>
                 <span class="inline-block px-3 py-1 bg-gray-200 rounded-full text-sm font-semibold m-1">Junk Removal</span>
-                <span class="inline-block px-3 py-1 bg-gray-200 rounded-full text-sm font-semibold m-1">Weed Abatement</span>
+                <span class="inline-block px-3 py-1 bg-gray-200 rounded-full text-sm font-semibold m-1">Driveway grading and paving</span>
             </div>
             
-            <p class="text-sm text-gray-500 mb-6">Providing affordable landscaping services in Clovis Ca and surrounding areas.</p>
+            <p class="text-sm text-gray-500 mb-6">Fresno, Clovis, Sanger, Friant, Coarsegold, and SurroundingAreas.</p>
 
             <div class="mt-4">
                 <img src="1000008275.gif" alt="Before and after of lot clearing and weedwhacking." class="w-full h-auto rounded-lg shadow-md">
@@ -41,12 +45,14 @@ If you're call doesn't go through, send a text or email.</p>
             </div>
 
             <div class="space-y-4">
-                <a href="tel:5596761583" class="flex items-center justify-center bg-gray-800 hover:bg-gray-700 transition duration-300 rounded-full p-3 font-semibold text-lg shadow-md text-white">
+                <!-- Phone Button -->
+                <a href="tel:5596664551" class="flex items-center justify-center bg-gray-800 hover:bg-gray-700 transition duration-300 rounded-full p-3 font-semibold text-lg shadow-md text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     (559) 666-4551
                 </a>
+                <!-- Email Button -->
                 <a href="mailto:trdserviceandco@gmail.com" class="flex items-center justify-center bg-gray-200 hover:bg-gray-300 transition duration-300 rounded-full p-3 font-semibold text-lg shadow-md text-gray-800">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 7.72V19a2 2 0 01-2 2H5a2 2 0 01-2-2v-3.28m18-3.44a2 2 0 01-2-2v-3.56a2 2 0 00-2-2H5a2 2 0 00-2 2v3.56a2 2 0 01-2 2" />
@@ -55,6 +61,7 @@ If you're call doesn't go through, send a text or email.</p>
                 </a>
             </div>
 
+            <!-- Save Contact Button -->
             <div class="mt-8">
                 <h3 class="text-xl font-bold mb-4">Save Contact</h3>
                 <button id="save-contact-button" class="w-full flex items-center justify-center bg-gray-800 hover:bg-gray-700 transition duration-300 rounded-full p-3 font-semibold text-lg shadow-md text-white">
@@ -64,6 +71,58 @@ If you're call doesn't go through, send a text or email.</p>
                     Save Contact
                 </button>
             </div>
+            
+            <!-- SERVICES DROPDOWN - New Section -->
+            <div class="mt-8">
+                <button id="services-dropdown-button" class="w-full flex items-center justify-center bg-gray-200 hover:bg-gray-300 transition duration-300 rounded-full p-3 font-semibold text-lg shadow-md text-gray-800">
+                    Services
+                    <!-- Chevron Icon for visual feedback -->
+                    <svg id="services-chevron" class="h-5 w-5 ml-2 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                
+                <!-- Services List Content -->
+                <div id="services-list" class="hidden mt-4 bg-gray-50 p-4 rounded-xl shadow-inner text-left">
+                    <h4 class="text-sm font-bold text-gray-800 mb-3">Residential & Commercial Services:</h4>
+                    <ul class="space-y-3 text-sm text-gray-700 list-disc list-inside px-2">
+                        <li>
+                            <span class="font-semibold">Basic Lawn Care</span> 
+                            <span class="block ml-2 text-xs text-gray-500">(Mowing/Edging/Clearing Walkways Driveways)</span>
+                        </li>
+                        <li>
+                            <span class="font-semibold">Bush Trimming</span>
+                        </li>
+                        <li>
+                            <span class="font-semibold">Tree Trimming/ Pruning</span>
+                            <span class="block ml-2 text-xs text-red-500 font-medium">(Excludes Trees Over 15ft Tall)</span>
+                        </li>
+                        <li>
+                            <span class="font-semibold">Yard Debris/ Junk Removal</span>
+                        </li>
+                        <li>
+                            <span class="font-semibold">Residential Weed Abatement</span>
+                        </li>
+                        <li>
+                            <span class="font-semibold">Lawn Seeding</span>
+                        </li>
+                        <li>
+                            <span class="font-semibold">Sod Installation</span>
+                        </li>
+                        <li>
+                            <span class="font-semibold">Stump Grinding</span>
+                        </li>
+                        <li>
+                            <span class="font-semibold">Sprinkler/ Fence Repairs</span>
+                        </li>
+                        <li>
+                            <span class="font-semibold">Driveway/ Walkway Grading And Paving</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END SERVICES DROPDOWN -->
+
         </div>
     </div>
 
@@ -72,15 +131,18 @@ If you're call doesn't go through, send a text or email.</p>
     <div class="mt-4 max-w-sm w-full md:max-w-md">
         <img src="1000008284.png" alt="An additional image for the page." class="w-full h-auto rounded-lg shadow-md">
     </div>
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // vCard data updated to match the phone number in the <a> tag
             const vCardData = `BEGIN:VCARD
 VERSION:3.0
 FN:TRD Service & Co.
-TEL;TYPE=WORK,VOICE:(559) 676-1583
+TEL;TYPE=WORK,VOICE:(559) 666-4551
 EMAIL;TYPE=PREF,INTERNET:trdserviceandco@gmail.com
 END:VCARD`;
 
+            // --- Save Contact Logic ---
             const saveButton = document.getElementById('save-contact-button');
             saveButton.addEventListener('click', () => {
                 const blob = new Blob([vCardData], { type: 'text/vcard' });
@@ -92,8 +154,26 @@ END:VCARD`;
                 document.body.removeChild(a);
                 URL.revokeObjectURL(a.href);
             });
+
+            // --- Services Dropdown Logic ---
+            const servicesButton = document.getElementById('services-dropdown-button');
+            const servicesList = document.getElementById('services-list');
+            const servicesChevron = document.getElementById('services-chevron');
+
+            servicesButton.addEventListener('click', () => {
+                // Toggle the 'hidden' class on the list
+                const isHidden = servicesList.classList.toggle('hidden');
+                
+                // Toggle the rotation of the chevron icon
+                if (isHidden) {
+                    servicesChevron.classList.remove('rotate-180');
+                } else {
+                    servicesChevron.classList.add('rotate-180');
+                }
+            });
         });
     </script>
 
 </body>
 </html>
+
